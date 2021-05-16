@@ -10,7 +10,7 @@ import Foundation
 struct PlayerScoreBoard: Codable, Hashable {
     let id: Int
     let name: String
-    let TPA: Int
+    let tpa: Int
     let hits: Int
     let out: Int
 }

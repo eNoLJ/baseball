@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Picher: Codable {
-    private let name: String
-    private let pit: Int
+struct Picher: Codable, Hashable {
+    let name: String
+    let pit: Int
 }

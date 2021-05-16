@@ -8,6 +8,6 @@
 import Foundation
 
 struct TeamScore: Codable {
-    private let teamName: String
-    private let scores: [Int]
+    let teamName: String
+    let scores: [Int]
 }

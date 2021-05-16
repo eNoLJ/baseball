@@ -23,8 +23,8 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="epG-8F-e7M">
-                        <rect key="frame" x="102" y="12" width="126" height="20.5"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="epG-8F-e7M">
+                        <rect key="frame" x="80" y="12" width="136" height="20.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4dh-Hf-W9e">
                                 <rect key="frame" x="0.0" y="0.0" width="22" height="20.5"/>
@@ -33,13 +33,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BWD-zQ-dBl">
-                                <rect key="frame" x="52" y="0.0" width="22" height="20.5"/>
+                                <rect key="frame" x="57" y="0.0" width="22" height="20.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7g-Tx-H0l">
-                                <rect key="frame" x="104" y="0.0" width="22" height="20.5"/>
+                                <rect key="frame" x="114" y="0.0" width="22" height="20.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -50,13 +50,18 @@
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="epG-8F-e7M" firstAttribute="centerY" secondItem="CFI-xe-lAD" secondAttribute="centerY" id="0Z5-cp-160"/>
-                    <constraint firstAttribute="trailing" secondItem="epG-8F-e7M" secondAttribute="trailing" constant="92" id="Q4Y-Ls-1d0"/>
+                    <constraint firstAttribute="trailing" secondItem="epG-8F-e7M" secondAttribute="trailing" constant="104" id="Q4Y-Ls-1d0"/>
                     <constraint firstItem="CFI-xe-lAD" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="QXS-kd-kAk"/>
                     <constraint firstItem="CFI-xe-lAD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="xb7-9g-trZ"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="23" y="42"/>
+            <connections>
+                <outlet property="hits" destination="BWD-zQ-dBl" id="HMz-TZ-vOs"/>
+                <outlet property="out" destination="D7g-Tx-H0l" id="IyD-X9-yzX"/>
+                <outlet property="tpa" destination="4dh-Hf-W9e" id="Ocy-8h-kBX"/>
+            </connections>
+            <point key="canvasLocation" x="21.739130434782609" y="41.517857142857139"/>
         </tableViewCell>
     </objects>
 </document>

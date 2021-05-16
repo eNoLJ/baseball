@@ -8,6 +8,6 @@
 import Foundation
 
 struct PairTeams: Codable {
-    private let homeTeamName: String
-    private let awayTeamName: String
+    let homeTeamName: String
+    let awayTeamName: String
 }

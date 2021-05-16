@@ -6,28 +6,38 @@
 //
 
 import XCTest
+import Combine
 @testable import baseball
 
 class baseballTests: XCTestCase {
-
+    var sut: ServerCommunicable!
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        try super.setUpWithError()
+        sut = NetworkingCenter()
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        sut = nil
+        try super.tearDownWithError()
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testGameListNetwork() {
+        var cancelBag = Set<AnyCancellable>()
+        let promise = expectation(description: "Completion handler call")
+        
+        guard let url = Endpoint.url(path: .gameList) else { return }
+        
+        let publisher: AnyPublisher<[PairTeams], Error> = sut.request(url: url, path: .gameList, token: nil)
+        publisher.sink { (completion) in
+            switch completion {
+            case .failure(let error):
+                XCTFail("Error: \(error.localizedDescription)")
+            case .finished:
+                promise.fulfill()
+            }
+        } receiveValue: { (pairTeams) in
+        }.store(in: &cancelBag)
+        
+        wait(for: [promise], timeout: 3)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }

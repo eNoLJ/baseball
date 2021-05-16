@@ -8,13 +8,19 @@
 import UIKit
 
 final class GameStoryTableViewCell: UITableViewCell {
-    @IBOutlet weak var countImage: UIImageView!
+    
+    @IBOutlet weak var indexLabel: UILabel!
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var countNumberLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-
+    }
+    
+    func configure(historyInfo: History, index: Int) {
+        self.indexLabel.text = "\(index + 1)"
+        self.countLabel.text = historyInfo.history
+        self.countNumberLabel.text = historyInfo.accumulatedHistory
     }
 
 

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ScoreBoard {
-    private let homeTeam: TeamScore
-    private let awayTeam: TeamScore
+struct ScoreBoard: Codable {
+    let homeTeam: TeamScore
+    let awayTeam: TeamScore
 }

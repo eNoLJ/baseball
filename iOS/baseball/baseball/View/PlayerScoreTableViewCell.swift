@@ -16,13 +16,13 @@ final class PlayerScoreTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-//        self.AVG.text =
     }
     
     func configure(playerScoreBoard: PlayerScoreBoard) {
         self.playerName.text = playerScoreBoard.name
-        self.TPA.text = "\(playerScoreBoard.TPA)"
+        self.TPA.text = "\(playerScoreBoard.tpa)"
         self.hits.text = "\(playerScoreBoard.hits)"
         self.out.text = "\(playerScoreBoard.out)"
+        self.AVG.text = String(format: "%.3f", Double(playerScoreBoard.hits) / Double(playerScoreBoard.tpa))
     }
 }
